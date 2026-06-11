@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>コラム記事入稿サンプル</title>
+    <meta
+      name="description"
+      content="WebメディアやECサイトのコラム記事を、見出し・画像・読みやすさを整えて入稿するサンプルです。"
+    />
+    <style>
+      :root {
+        --ink: #1b241f;
+        --muted: #657269;
+        --line: #d8ded4;
+        --paper: #f8f7f2;
+        --panel: #ffffff;
+        --accent: #0f8b6f;
+        --gold: #c47a2a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.8;
+      }
+
+      .article-shell {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 42px 18px 72px;
+      }
+
+      .meta {
+        color: var(--gold);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 10px 0 18px;
+        font-size: clamp(32px, 6vw, 58px);
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .hero-image {
+        display: grid;
+        place-items: center;
+        min-height: 320px;
+        margin: 32px 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(135deg, rgba(15, 139, 111, 0.12), rgba(196, 122, 42, 0.16)),
+          #fff;
+      }
+
+      .hero-image span {
+        padding: 10px 14px;
+        border-radius: 999px;
+        color: var(--accent);
+        background: #ffffff;
+        font-weight: 800;
+      }
+
+      .content {
+        display: grid;
+        gap: 22px;
+      }
+
+      section {
+        padding: 26px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 26px;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+      }
+
+      .checklist {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .checklist div {
+        padding: 18px;
+        border-left: 4px solid var(--accent);
+        background: #ffffff;
+      }
+
+      .checklist strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      @media (max-width: 720px) {
+        .checklist {
+          grid-template-columns: 1fr;
+        }
+
+        section {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="article-shell">
+      <p class="meta">COLUMN ENTRY SAMPLE</p>
+      <h1>コラム記事を、読みやすく入稿するための整形サンプル</h1>
+      <p class="lead">
+        2,500から5,000文字の記事を入稿する際、見出し階層、画像位置、alt文、改行、スマホ表示を確認してから公開できる形に整えます。
+      </p>
+
+      <figure class="hero-image" aria-label="フリー素材画像の配置例">
+        <span>フリー素材画像 + alt文 + キャプション確認</span>
+      </figure>
+
+      <div class="content">
+        <section>
+          <h2>見出し階層を整理する</h2>
+          <p>
+            本文をそのまま流し込むだけでなく、H2/H3の役割を確認し、読み手が流し読みできる構造にします。
+            重複見出しや長すぎる見出しは、入稿前にメモとして返します。
+          </p>
+        </section>
+        <section>
+          <h2>画像と本文のつながりを見る</h2>
+          <p>
+            フリー素材を使う場合は、本文内容とズレていないか、横長画像がスマホで潰れないか、alt文が空欄になっていないかを確認します。
+          </p>
+        </section>
+        <section>
+          <h2>公開前チェックを残す</h2>
+          <ul>
+            <li>タイトル、見出し、本文の表記ゆれ</li>
+            <li>画像の出典・alt文・表示サイズ</li>
+            <li>PC幅とスマホ幅での読みやすさ</li>
+            <li>リンク切れと不要な空白</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="checklist" aria-label="納品メモ例">
+        <div>
+          <strong>納品メモ</strong>
+          <p>入稿URL、使用画像、修正した見出し、残確認事項を短くまとめます。</p>
+        </div>
+        <div>
+          <strong>対応範囲</strong>
+          <p>WordPress、CMS、静的HTMLのいずれも、権限と作業範囲を確認して対応します。</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
