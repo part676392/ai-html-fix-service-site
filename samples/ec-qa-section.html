@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ECサイト向けQ&Aセクション実装サンプル</title>
+    <style>
+      :root {
+        --ink: #1c241f;
+        --muted: #657369;
+        --line: #d9ded5;
+        --paper: #f8f7f2;
+        --panel: #ffffff;
+        --accent: #0f8b6f;
+        --accent-soft: #e4f3ee;
+        --gold: #bc7a28;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.7;
+      }
+
+      .wrap {
+        max-width: 1040px;
+        margin: 0 auto;
+        padding: 56px 18px;
+      }
+
+      .section-label {
+        margin: 0 0 10px;
+        color: var(--gold);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(30px, 6vw, 56px);
+        line-height: 1.1;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 680px;
+        margin: 18px 0 34px;
+        color: var(--muted);
+      }
+
+      .qa-layout {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .summary {
+        padding: 24px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .summary strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+
+      .summary p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .qa-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        overflow: hidden;
+      }
+
+      summary {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 18px 20px;
+        cursor: pointer;
+        font-weight: 800;
+        list-style: none;
+      }
+
+      summary::-webkit-details-marker {
+        display: none;
+      }
+
+      summary::after {
+        content: "+";
+        flex: 0 0 auto;
+        display: grid;
+        place-items: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        color: #ffffff;
+        background: var(--accent);
+      }
+
+      details[open] summary {
+        color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      details[open] summary::after {
+        content: "-";
+      }
+
+      .answer {
+        padding: 0 20px 20px;
+        color: var(--muted);
+      }
+
+      .note {
+        margin-top: 28px;
+        padding: 16px;
+        border-left: 4px solid var(--accent);
+        background: #ffffff;
+        color: var(--muted);
+      }
+
+      @media (max-width: 760px) {
+        .qa-layout {
+          grid-template-columns: 1fr;
+        }
+
+        summary {
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="section-label">Q&A COMPONENT SAMPLE</p>
+      <h1>購入前の不安を減らすQ&Aセクション</h1>
+      <p class="lead">
+        ECサイトの下部や商品ページに置ける、レスポンシブ対応のQ&Aセクション例です。
+        見本デザインに合わせて色、余白、開閉状態、構造化データの追加まで調整できます。
+      </p>
+
+      <section class="qa-layout" aria-label="よくある質問">
+        <aside class="summary">
+          <strong>設置目的</strong>
+          <p>配送、返品、包装、支払いなどの不安をページ内で解消し、問い合わせ前の離脱を減らします。</p>
+        </aside>
+
+        <div class="qa-list">
+          <details open>
+            <summary>注文後、いつ発送されますか？</summary>
+            <div class="answer">
+              通常はご注文確認後、2から3営業日以内に発送します。繁忙期は商品ページまたはお知らせ欄で目安を案内します。
+            </div>
+          </details>
+          <details>
+            <summary>のしや包装には対応していますか？</summary>
+            <div class="answer">
+              商品ごとに対応可否が異なるため、対象商品の説明欄に表示します。必要に応じて注文フォームに選択欄を追加できます。
+            </div>
+          </details>
+          <details>
+            <summary>返品や交換はできますか？</summary>
+            <div class="answer">
+              商品到着後の状態確認を前提に、ショップ規定に沿って案内します。条件を短く明記すると、購入前の不安を減らせます。
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <p class="note">
+        納品時は、変更したHTML/CSS、確認した画面幅、残すべき運用メモをセットで提出します。
+      </p>
+    </main>
+  </body>
+</html>
