@@ -3,26 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI生成HTML・LP軽微修正サービス</title>
+    <title>HTML Fix Studio | AI生成HTML・LP修正 / JP + EN</title>
     <meta
       name="description"
-      content="AI生成HTML、LP、既存サイトの軽微なHTML/CSS崩れを即日で確認し、差分つきで修正します。初回3,000円から。"
+      content="AI生成HTML、LP、既存サイトのHTML/CSS崩れを英日対応で修正します。初回3,000円から。差分メモ、スマホ確認、CrowdWorks/Coconala/Stripe対応。"
     />
     <link rel="canonical" href="https://part676392.github.io/ai-html-fix-service-site/" />
-    <meta property="og:title" content="AI生成HTML・LP軽微修正サービス" />
+    <meta property="og:title" content="HTML Fix Studio | AI生成HTML・LP修正 / JP + EN" />
     <meta
       property="og:description"
-      content="AI生成HTMLや既存LPの表示崩れ、余白、スマホ崩れ、リンク不備を即日で修正します。"
+      content="AI生成HTMLや既存LPの崩れを、差分メモつきで小さく修正。3,000円から、英語依頼にも対応。"
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://part676392.github.io/ai-html-fix-service-site/" />
     <meta property="og:image" content="https://part676392.github.io/ai-html-fix-service-site/assets/service-hero.png" />
     <meta property="og:site_name" content="HTML Fix Studio" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="AI生成HTML・LP軽微修正サービス" />
+    <meta name="twitter:title" content="HTML Fix Studio | AI生成HTML・LP修正 / JP + EN" />
     <meta
       name="twitter:description"
-      content="初回3,000円から。HTML/CSSの崩れ、Q&A追加、AI生成フォーム一次確認を差分つきで対応します。"
+      content="初回3,000円から。HTML/CSS崩れ、FAQ追加、AI生成フォーム確認を英日対応で修正します。"
     />
     <meta name="twitter:image" content="https://part676392.github.io/ai-html-fix-service-site/assets/service-hero.png" />
     <link
@@ -37,26 +37,27 @@
         "@type": "ProfessionalService",
         "name": "HTML Fix Studio",
         "url": "https://part676392.github.io/ai-html-fix-service-site/",
-        "description": "AI生成HTML、LP、既存サイトの軽微なHTML/CSS崩れを差分つきで修正する小規模Web修正サービス。",
-        "areaServed": "JP",
+        "description": "AI生成HTML、LP、既存サイトのHTML/CSS崩れを英日対応で差分つき修正する小規模Web修正サービス。",
+        "areaServed": ["JP", "Worldwide"],
+        "availableLanguage": ["ja", "en"],
         "offers": [
           {
             "@type": "Offer",
-            "name": "初回ミニ修正",
+            "name": "Mini HTML/CSS fix",
             "price": "3000",
             "priceCurrency": "JPY",
             "description": "1から3箇所の軽微なHTML/CSS修正、PC/スマホ幅の表示確認、変更点メモ。"
           },
           {
             "@type": "Offer",
-            "name": "Q&A/FAQセクション追加",
+            "name": "FAQ/Q&A section",
             "price": "5000",
             "priceCurrency": "JPY",
-            "description": "ECサイトやLPへのQ&A/FAQ欄追加、見出し構造整理、必要に応じたFAQPage構造化データたたき台。"
+            "description": "ECサイトやLPへのQ&A/FAQ欄追加、レスポンシブ確認、必要に応じたFAQPage構造化データたたき台。"
           },
           {
             "@type": "Offer",
-            "name": "AI生成フォーム一次確認",
+            "name": "AI generated PHP form check",
             "price": "10000",
             "priceCurrency": "JPY",
             "description": "AI生成PHPフォームの入力検証、メール送信、CSRF、bot対策などの小規模な一次確認。"
@@ -72,157 +73,171 @@
         <span>HTML Fix Studio</span>
       </a>
       <nav aria-label="主要ナビゲーション">
-        <a href="#service">内容</a>
-        <a href="#examples">実例</a>
-        <a href="#pricing">料金</a>
-        <a href="#request">依頼</a>
+        <a href="#packages">Pricing</a>
+        <a href="#proof">Proof</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#request">Request</a>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="hero-bg" aria-hidden="true"></div>
+      <section class="hero" aria-label="HTML Fix Studio">
         <div class="hero-copy">
-          <p class="eyebrow">AI生成HTML・LP・既存サイトの軽微修正</p>
-          <h1>HTML/CSSの崩れを、差分つきで即日修正します。</h1>
+          <p class="eyebrow">Bilingual HTML/CSS repair / 日本語・英語対応</p>
+          <h1>Fix the messy parts of an AI-built website before clients see it.</h1>
           <p class="lede">
-            AIで作ったページの余白崩れ、スマホ表示、ボタン位置、リンク不備、画像サイズの乱れを確認し、
-            修正内容が分かる形で納品します。
+            AI生成HTML、LP、既存サイトの表示崩れを、小さく切って直します。
+            差分メモ、スマホ幅確認、取引プラットフォーム経由の支払いまで対応します。
           </p>
           <div class="hero-actions" aria-label="依頼導線">
-            <a class="button primary" href="#request">見積もり相談</a>
-            <a class="button secondary" href="#examples">修正例を見る</a>
+            <a class="button primary" href="#request">Start from 3,000 JPY</a>
+            <a class="button secondary" href="#proof">View public proof</a>
           </div>
+          <dl class="hero-metrics" aria-label="サービス概要">
+            <div>
+              <dt>3,000 JPY</dt>
+              <dd>minimum package</dd>
+            </div>
+            <div>
+              <dt>JP + EN</dt>
+              <dd>proposal ready</dd>
+            </div>
+            <div>
+              <dt>Diff memo</dt>
+              <dd>what changed</dd>
+            </div>
+          </dl>
         </div>
+        <figure class="hero-visual">
+          <img src="./assets/service-hero.png" alt="AI生成HTMLの修正前後を示すbefore/after図" />
+          <figcaption>
+            Public sample: spacing, overflow and mobile viewport checks are handled before delivery.
+          </figcaption>
+        </figure>
       </section>
 
-      <section class="market-strip" aria-label="対応できる案件">
-        <span>AI生成HTMLの調整</span>
-        <span>LPの表示崩れ</span>
-        <span>スマホ崩れ</span>
-        <span>共通パーツ実装</span>
-        <span>AI生成フォーム確認</span>
-        <span>WordPress内HTML/CSS</span>
-        <span>GitHub差分納品</span>
+      <section class="market-strip" aria-label="対応できる仕事">
+        <span>AI HTML cleanup</span>
+        <span>LP fixes</span>
+        <span>Mobile overflow</span>
+        <span>FAQ/Q&A blocks</span>
+        <span>PHP form checks</span>
+        <span>GitHub diff</span>
+        <span>CrowdWorks</span>
+        <span>Coconala</span>
+        <span>Stripe link setup</span>
       </section>
 
-      <section id="service" class="section">
+      <section id="packages" class="section package-section" aria-label="定額パック">
         <div class="section-head">
-          <p class="eyebrow">Service</p>
-          <h2>小さい修正を、発注しやすい単位に切ります。</h2>
+          <p class="eyebrow">Packages</p>
+          <h2>Pick the smallest scope that can be paid today.</h2>
           <p>
-            「全部作り直し」ではなく、今あるHTMLやLPを触って直す仕事に絞ります。
-            依頼者側の確認コストを下げるため、修正前後と差分をセットで出します。
-          </p>
-        </div>
-        <div class="service-grid">
-          <article>
-            <h3>表示崩れの修正</h3>
-            <p>余白、横スクロール、画像のはみ出し、ボタンの位置ずれ、スマホだけ崩れる箇所を確認します。</p>
-          </article>
-          <article>
-            <h3>AI生成HTMLの整理</h3>
-            <p>重複CSS、読みにくいクラス名、不要なインライン指定を減らし、保守しやすい構造に寄せます。</p>
-          </article>
-          <article>
-            <h3>差分つき納品</h3>
-            <p>変更ファイル、修正理由、確認した画面幅、残課題をまとめて、GitHub PRまたはZIPで渡します。</p>
-          </article>
-          <article>
-            <h3>Q&A/FAQ追加</h3>
-            <p>ECサイトやLPのQ&A欄を、見た目と見出し構造をそろえて追加します。必要なら構造化データのたたき台も用意します。</p>
-          </article>
-          <article>
-            <h3>記事入稿整形</h3>
-            <p>コラム記事の見出し、画像、alt文、スマホ表示を確認し、公開前チェックつきで入稿できる形に整えます。</p>
-          </article>
-          <article>
-            <h3>共通パーツ実装</h3>
-            <p>ヘッダー、ナビ、CTA、フッターなど、支給画像や既存ページに合わせた小さいHTML/CSSパーツを組みます。</p>
-          </article>
-          <article>
-            <h3>フォーム簡易確認</h3>
-            <p>AI生成PHPフォームの入力検証、メール送信、エラー表示、CSRFなどを小規模な一次確認として整理します。</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="examples" class="section examples">
-        <div class="section-head">
-          <p class="eyebrow">Examples</p>
-          <h2>納品イメージ</h2>
-        </div>
-        <div class="comparison">
-          <figure>
-            <img src="./assets/cleanup-before.png" alt="修正前の表示崩れ例" width="720" height="420" />
-            <figcaption>修正前: CTAが詰まり、スマホ幅で横スクロールが出る状態</figcaption>
-          </figure>
-          <figure>
-            <img src="./assets/cleanup-after.png" alt="修正後の表示例" width="720" height="420" />
-            <figcaption>修正後: 余白、折り返し、ボタン配置を整理した状態</figcaption>
-          </figure>
-        </div>
-        <p class="sample-link">
-          ECサイト向けのQ&Aセクション実装例:
-          <a href="./samples/ec-qa-section.html">サンプルページを見る</a>
-          /
-          <a href="./samples/ec-faq-proposal.html">提案ページを見る</a>
-          /
-          <a href="./samples/column-entry-sample.html">記事入稿サンプルを見る</a>
-          /
-          <a href="./samples/common-parts-coding-sample.html">共通パーツ実装サンプルを見る</a>
-          /
-          <a href="./samples/php-form-security-checklist.html">PHPフォーム安全確認サンプルを見る</a>
-        </p>
-      </section>
-
-      <section id="pricing" class="section pricing">
-        <div class="price-copy">
-          <p class="eyebrow">Pricing</p>
-          <h2>初回の小さい依頼は 3,000円 から。</h2>
-          <p>
-            1箇所から依頼できます。作業前に範囲を切るので、見積もりが膨らみません。
-            継続修正やページ全体の調整は、対象ファイル数と確認画面幅で見積もります。
-          </p>
-        </div>
-        <div class="price-box" aria-label="料金">
-          <strong>3,000円</strong>
-          <span>初回ミニ修正</span>
-          <ul>
-            <li>1から3箇所の軽微なHTML/CSS修正</li>
-            <li>PC/スマホ幅の表示確認</li>
-            <li>変更点メモまたはGitHub PR</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section package-section" aria-label="定額パック">
-        <div class="section-head">
-          <p class="eyebrow">Quick Order</p>
-          <h2>迷う場合は、この3つから選べます。</h2>
-          <p>
-            相談文を自動で作るので、依頼者は対象URLと困っていることを少し足すだけです。
-            正式な支払いは取引プラットフォーム経由に合わせます。
+            5ドル超えを最短で狙うため、支払い単位は3,000円以上に固定します。
+            依頼者には「何をもらえるか」が先に見えるようにしています。
           </p>
         </div>
         <div class="package-grid">
-          <article class="package-card">
+          <article class="package-card featured">
+            <p class="package-kicker">Fastest entry</p>
             <span class="package-price">3,000円</span>
-            <h3>初回ミニ修正</h3>
-            <p>スマホ崩れ、余白、画像はみ出し、ボタン位置など、1から3箇所の軽微修正。</p>
-            <button class="button primary" type="button" data-package="mini">この内容で相談文を作る</button>
+            <h3>Mini HTML/CSS fix</h3>
+            <p>1から3箇所の余白、横スクロール、画像はみ出し、ボタン位置を修正。</p>
+            <ul>
+              <li>PC/スマホ幅確認</li>
+              <li>変更点メモ</li>
+              <li>CrowdWorks/Coconala対応</li>
+            </ul>
+            <button class="button primary" type="button" data-package="mini">相談文を作る</button>
           </article>
           <article class="package-card">
+            <p class="package-kicker">Best for 13220789</p>
             <span class="package-price">5,000円</span>
-            <h3>Q&A/FAQ追加</h3>
-            <p>ECサイトやLPに、購入前の不安を減らすQ&A欄を追加。必要なら構造化データもたたき台化。</p>
-            <button class="button primary" type="button" data-package="faq">この内容で相談文を作る</button>
+            <h3>FAQ / Q&A section</h3>
+            <p>ECサイトやLPに、購入前の不安を減らすQ&A欄を追加。</p>
+            <ul>
+              <li>Q&A 3から6問</li>
+              <li>レスポンシブ確認</li>
+              <li>FAQPage schema draft</li>
+            </ul>
+            <button class="button primary" type="button" data-package="faq">相談文を作る</button>
           </article>
           <article class="package-card">
+            <p class="package-kicker">AI code risk</p>
             <span class="package-price">10,000円</span>
-            <h3>AI生成フォーム一次確認</h3>
-            <p>PHPフォームの入力検証、メール送信、CSRF、bot対策を見て、修正点と残課題を整理。</p>
-            <button class="button primary" type="button" data-package="form">この内容で相談文を作る</button>
+            <h3>AI PHP form check</h3>
+            <p>AI生成フォームの入力検証、メール送信、CSRF、bot対策を一次確認。</p>
+            <ul>
+              <li>正常/異常入力</li>
+              <li>修正理由メモ</li>
+              <li>残課題レポート</li>
+            </ul>
+            <button class="button primary" type="button" data-package="form">相談文を作る</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="proof" class="section proof-section">
+        <div class="section-head">
+          <p class="eyebrow">Proof before proposal</p>
+          <h2>Public samples for the exact jobs I am bidding on.</h2>
+          <p>「できます」ではなく、案件別の見本URLを先に出します。</p>
+        </div>
+        <div class="proof-grid">
+          <a class="proof-link" href="./samples/ec-faq-proposal.html">
+            <span>01</span>
+            <strong>EC FAQ proposal</strong>
+            <em>5,000円Q&A案件向け</em>
+          </a>
+          <a class="proof-link" href="./samples/ec-qa-section.html">
+            <span>02</span>
+            <strong>Q&A component</strong>
+            <em>responsive + FAQ schema</em>
+          </a>
+          <a class="proof-link" href="./samples/common-parts-coding-sample.html">
+            <span>03</span>
+            <strong>Common parts coding</strong>
+            <em>header / CTA / footer</em>
+          </a>
+          <a class="proof-link" href="./samples/php-form-security-checklist.html">
+            <span>04</span>
+            <strong>AI form check</strong>
+            <em>PHP form safety checklist</em>
+          </a>
+        </div>
+      </section>
+
+      <section id="workflow" class="section workflow-section">
+        <div class="workflow-panel">
+          <div>
+            <p class="eyebrow">Workflow</p>
+            <h2>Scope first. Fix second. Explain third.</h2>
+          </div>
+          <ol class="workflow-list">
+            <li><strong>Send URL or files</strong><span>公開URL、HTML/CSS、スクリーンショットを受け取ります。</span></li>
+            <li><strong>Isolate the broken part</strong><span>修正範囲を先に切り、見積もりが膨らまないようにします。</span></li>
+            <li><strong>Deliver diff + memo</strong><span>変更ファイル、確認幅、修正理由を短くまとめます。</span></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section trust-section" aria-label="取引方法">
+        <div>
+          <p class="eyebrow">Payment and platforms</p>
+          <h2>Platform-safe payment, not a vague DM deal.</h2>
+        </div>
+        <div class="trust-grid">
+          <article>
+            <strong>CrowdWorks</strong>
+            <p>案件応募と契約に合わせます。現在の第一候補はEC Q&A追加案件です。</p>
+          </article>
+          <article>
+            <strong>Coconala</strong>
+            <p>3,000円の小修正サービスとして出品できます。国内向けの信用導線です。</p>
+          </article>
+          <article>
+            <strong>Stripe</strong>
+            <p>海外向けの英語依頼や直接決済用。Payment Linkを発行できる状態へ整えます。</p>
           </article>
         </div>
       </section>
@@ -230,86 +245,55 @@
       <section id="request" class="section request">
         <div class="section-head">
           <p class="eyebrow">Request</p>
-          <h2>依頼前に必要なのは、URLかファイルだけです。</h2>
+          <h2>Send the broken URL. I will turn it into a small paid job.</h2>
           <p>
-            いま困っているページ、HTML/CSSファイル、または修正指示を送ってください。
-            触れる範囲と納品形式を確認してから作業します。
+            下の内容はGitHub Issueの下書きとして生成されます。契約・支払いはCrowdWorks、Coconala、Stripeなどに合わせます。
           </p>
         </div>
-        <div class="request-actions">
-          <a class="button primary" href="https://github.com/part676392/ai-html-fix-service-site/issues/new/choose">
-            GitHubで見積もり相談
-          </a>
-          <button class="button secondary" type="button" id="copyPitch">応募文をコピー</button>
-        </div>
-        <p class="trade-note">
-          正式な契約・支払いは、クラウドワークス、ココナラ、その他の取引プラットフォーム経由にも合わせられます。
-          GitHub Issueは、公開できる範囲の事前相談だけに使ってください。
-        </p>
-        <form
-          class="estimate-form"
-          name="estimate"
-          id="estimateForm"
-        >
+
+        <form id="estimateForm" class="estimate-form">
           <label>
-            お名前または表示名
-            <input name="name" autocomplete="name" required />
+            <span>Name / 表示名</span>
+            <input name="name" autocomplete="name" placeholder="例: 田口 / Store owner" />
           </label>
           <label>
-            連絡先
-            <input name="contact" autocomplete="email" placeholder="メール、クラウドワークスURL、ココナラURLなど" required />
+            <span>Contact / 連絡先</span>
+            <input name="contact" autocomplete="email" placeholder="メール、CrowdWorks名、Coconala名など" />
           </label>
           <label>
-            契約・支払いに使いたい場所
-            <select name="platform" required>
+            <span>Payment platform / 取引場所</span>
+            <select name="platform">
               <option value="">選択してください</option>
               <option>クラウドワークス</option>
               <option>ココナラ</option>
-              <option>その他の取引プラットフォーム</option>
-              <option>まだ決めていない</option>
+              <option>Stripe payment link</option>
+              <option>その他</option>
             </select>
           </label>
           <label>
-            対象URLまたは作業概要
-            <input name="target" placeholder="https://example.com/lp" required />
+            <span>Target / 対象URLまたは作業概要</span>
+            <textarea name="target" rows="3" placeholder="公開URL、HTML/CSSファイル、修正したいページ"></textarea>
           </label>
           <label>
-            困っていること
-            <textarea name="problem" required placeholder="スマホ幅で横スクロールが出る、Q&A欄を追加したい、記事入稿を頼みたい、など"></textarea>
+            <span>Problem / 困っていること</span>
+            <textarea name="problem" rows="5" placeholder="スマホで横スクロールする、FAQを追加したい、フォームが不安など"></textarea>
           </label>
           <label>
-            予算感
-            <select name="budget" required>
-              <option value="">選択してください</option>
-              <option>3,000円くらい</option>
-              <option>5,000円くらい</option>
-              <option>10,000円以上</option>
-              <option>相談したい</option>
-            </select>
+            <span>Budget / 予算感</span>
+            <input name="budget" placeholder="3,000円 / 5,000円 / 10,000円 など" />
           </label>
-          <div class="form-actions">
-            <button class="button primary" type="button" id="copyEstimate">相談文をコピー</button>
-            <a class="button secondary" id="openEstimateIssue" href="https://github.com/part676392/ai-html-fix-service-site/issues/new?template=request.md">
-              GitHubで相談を開く
-            </a>
-          </div>
         </form>
-        <textarea id="pitchText" readonly aria-label="応募文テンプレート">
-はじめまして。AI生成HTMLや既存サイトのHTML/CSS軽微修正を、差分が分かる形で対応できます。
-対応範囲は、余白崩れ、スマホ表示、横スクロール、画像サイズ、ボタン配置、リンク不備などです。
-ヘッダー、ナビ、CTA、フッターなどの小さい共通パーツ実装にも対応できます。
-AI生成PHPフォームの入力検証、メール送信、CSRFなどの小規模な一次確認も相談可能です。
-作業前に対象箇所を切り分け、変更ファイル・修正理由・確認した画面幅をまとめて納品します。
-ポートフォリオ: https://part676392.github.io/ai-html-fix-service-site/
-初回の小さい修正であれば 3,000円から相談可能です。クラウドワークス等の取引プラットフォーム経由にも合わせられます。
-よろしくお願いいたします。
-        </textarea>
+
+        <div class="request-actions">
+          <a id="openEstimateIssue" class="button primary" href="https://github.com/part676392/ai-html-fix-service-site/issues/new?template=request.md">GitHubで見積もり相談</a>
+          <button id="copyEstimate" class="button secondary" type="button">相談文をコピー</button>
+        </div>
       </section>
     </main>
 
     <footer>
       <span>HTML Fix Studio</span>
-      <span>Public files only. Platform-based payment available.</span>
+      <span>JP + EN small web repair service</span>
     </footer>
   </body>
 </html>
