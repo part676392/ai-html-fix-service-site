@@ -23,6 +23,39 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./app.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "HTML Fix Studio",
+        "url": "https://part676392.github.io/ai-html-fix-service-site/",
+        "description": "AI生成HTML、LP、既存サイトの軽微なHTML/CSS崩れを差分つきで修正する小規模Web修正サービス。",
+        "areaServed": "JP",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "初回ミニ修正",
+            "price": "3000",
+            "priceCurrency": "JPY",
+            "description": "1から3箇所の軽微なHTML/CSS修正、PC/スマホ幅の表示確認、変更点メモ。"
+          },
+          {
+            "@type": "Offer",
+            "name": "Q&A/FAQセクション追加",
+            "price": "5000",
+            "priceCurrency": "JPY",
+            "description": "ECサイトやLPへのQ&A/FAQ欄追加、見出し構造整理、必要に応じたFAQPage構造化データたたき台。"
+          },
+          {
+            "@type": "Offer",
+            "name": "AI生成フォーム一次確認",
+            "price": "10000",
+            "priceCurrency": "JPY",
+            "description": "AI生成PHPフォームの入力検証、メール送信、CSRF、bot対策などの小規模な一次確認。"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="topbar">
@@ -152,6 +185,37 @@
             <li>PC/スマホ幅の表示確認</li>
             <li>変更点メモまたはGitHub PR</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="section package-section" aria-label="定額パック">
+        <div class="section-head">
+          <p class="eyebrow">Quick Order</p>
+          <h2>迷う場合は、この3つから選べます。</h2>
+          <p>
+            相談文を自動で作るので、依頼者は対象URLと困っていることを少し足すだけです。
+            正式な支払いは取引プラットフォーム経由に合わせます。
+          </p>
+        </div>
+        <div class="package-grid">
+          <article class="package-card">
+            <span class="package-price">3,000円</span>
+            <h3>初回ミニ修正</h3>
+            <p>スマホ崩れ、余白、画像はみ出し、ボタン位置など、1から3箇所の軽微修正。</p>
+            <button class="button primary" type="button" data-package="mini">この内容で相談文を作る</button>
+          </article>
+          <article class="package-card">
+            <span class="package-price">5,000円</span>
+            <h3>Q&A/FAQ追加</h3>
+            <p>ECサイトやLPに、購入前の不安を減らすQ&A欄を追加。必要なら構造化データもたたき台化。</p>
+            <button class="button primary" type="button" data-package="faq">この内容で相談文を作る</button>
+          </article>
+          <article class="package-card">
+            <span class="package-price">10,000円</span>
+            <h3>AI生成フォーム一次確認</h3>
+            <p>PHPフォームの入力検証、メール送信、CSRF、bot対策を見て、修正点と残課題を整理。</p>
+            <button class="button primary" type="button" data-package="form">この内容で相談文を作る</button>
+          </article>
         </div>
       </section>
 

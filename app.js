@@ -3,6 +3,31 @@ const pitchText = document.querySelector("#pitchText");
 const estimateForm = document.querySelector("#estimateForm");
 const copyEstimate = document.querySelector("#copyEstimate");
 const openEstimateIssue = document.querySelector("#openEstimateIssue");
+const packageButtons = document.querySelectorAll("[data-package]");
+
+const packagePresets = {
+  mini: {
+    platform: "クラウドワークス",
+    target: "初回ミニ修正: 公開URLまたはHTML/CSSファイルを共有予定",
+    problem:
+      "スマホ表示、余白、画像はみ出し、ボタン位置など、1から3箇所の軽微なHTML/CSS修正を相談したいです。",
+    budget: "3,000円くらい",
+  },
+  faq: {
+    platform: "クラウドワークス",
+    target: "Q&A/FAQセクション追加: 対象ページURLを共有予定",
+    problem:
+      "ECサイトまたはLPにQ&A/FAQ欄を追加したいです。見出し構造、スマホ表示、必要に応じたFAQPage構造化データのたたき台も相談したいです。",
+    budget: "5,000円くらい",
+  },
+  form: {
+    platform: "クラウドワークス",
+    target: "AI生成PHPフォーム一次確認: 対象フォーム一式を共有予定",
+    problem:
+      "AI生成PHPフォームの入力検証、メール送信、出力エスケープ、CSRF、bot/連投対策、正常送信・異常入力の確認を相談したいです。",
+    budget: "10,000円以上",
+  },
+};
 
 if (copyButton && pitchText) {
   copyButton.addEventListener("click", async () => {
@@ -52,6 +77,26 @@ if (estimateForm) {
   estimateForm.addEventListener("change", updateIssueLink);
   updateIssueLink();
 }
+
+function setField(name, value) {
+  if (!estimateForm) return;
+  const field = estimateForm.elements.namedItem(name);
+  if (!field) return;
+  field.value = value;
+}
+
+packageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const preset = packagePresets[button.dataset.package];
+    if (!preset || !estimateForm) return;
+    setField("platform", preset.platform);
+    setField("target", preset.target);
+    setField("problem", preset.problem);
+    setField("budget", preset.budget);
+    updateIssueLink();
+    document.querySelector("#request")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
 
 if (copyEstimate) {
   copyEstimate.addEventListener("click", async () => {
