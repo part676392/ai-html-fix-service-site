@@ -4,6 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ECサイト向けQ&Aセクション実装サンプル</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "注文後、いつ発送されますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "通常はご注文確認後、2から3営業日以内に発送します。繁忙期は商品ページまたはお知らせ欄で目安を案内します。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "のしや包装には対応していますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "商品ごとに対応可否が異なるため、対象商品の説明欄に表示します。必要に応じて注文フォームに選択欄を追加できます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "返品や交換はできますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "商品到着後の状態確認を前提に、ショップ規定に沿って案内します。条件を短く明記すると、購入前の不安を減らせます。"
+            }
+          }
+        ]
+      }
+    </script>
     <style>
       :root {
         --ink: #1c241f;
@@ -194,6 +226,7 @@
 
       <p class="note">
         納品時は、変更したHTML/CSS、確認した画面幅、残すべき運用メモをセットで提出します。
+        SEO目的の場合は、必要に応じてFAQPage構造化データのたたき台も追加できます。
       </p>
     </main>
   </body>
