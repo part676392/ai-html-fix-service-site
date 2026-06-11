@@ -1,0 +1,39 @@
+name: 見積もり相談
+description: AI生成HTML・LP・既存サイトの軽微修正を相談する
+title: "[見積もり] "
+labels:
+  - estimate
+body:
+  - type: markdown
+    attributes:
+      value: |
+        公開できるURL、HTML/CSSファイル、または修正したい箇所を共有してください。
+        秘密情報、ログイン情報、APIキー、個人情報は書かないでください。
+  - type: input
+    id: target
+    attributes:
+      label: 対象URLまたは概要
+      placeholder: https://example.com/lp
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 困っていること
+      description: どの画面幅で、どこが、どう崩れているかを書いてください。
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: 関連ファイルや納品希望形式
+      description: GitHub PR、ZIP、修正メモなど希望があれば書いてください。
+    validations:
+      required: false
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: 確認
+      options:
+        - label: 秘密情報、ログイン情報、APIキー、個人情報を含めていません。
+          required: true

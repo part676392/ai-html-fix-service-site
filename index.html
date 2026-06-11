@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI生成HTML・LP軽微修正サービス</title>
+    <meta
+      name="description"
+      content="AI生成HTML、LP、既存サイトの軽微なHTML/CSS崩れを即日で確認し、差分つきで修正します。初回3,000円から。"
+    />
+    <meta property="og:title" content="AI生成HTML・LP軽微修正サービス" />
+    <meta
+      property="og:description"
+      content="AI生成HTMLや既存LPの表示崩れ、余白、スマホ崩れ、リンク不備を即日で修正します。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://part676392.github.io/ai-html-fix-service-site/" />
+    <meta property="og:image" content="https://part676392.github.io/ai-html-fix-service-site/assets/service-hero.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="icon"
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="18" rx="4" fill="%230f8b6f"/><path d="M10 14h12M10 18h8" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>'
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="ページ先頭へ">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>HTML Fix Studio</span>
+      </a>
+      <nav aria-label="主要ナビゲーション">
+        <a href="#service">内容</a>
+        <a href="#examples">実例</a>
+        <a href="#pricing">料金</a>
+        <a href="#request">依頼</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow">AI生成HTML・LP・既存サイトの軽微修正</p>
+          <h1>HTML/CSSの崩れを、差分つきで即日修正します。</h1>
+          <p class="lede">
+            AIで作ったページの余白崩れ、スマホ表示、ボタン位置、リンク不備、画像サイズの乱れを確認し、
+            修正内容が分かる形で納品します。
+          </p>
+          <div class="hero-actions" aria-label="依頼導線">
+            <a class="button primary" href="#request">見積もり相談</a>
+            <a class="button secondary" href="#examples">修正例を見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="market-strip" aria-label="対応できる案件">
+        <span>AI生成HTMLの調整</span>
+        <span>LPの表示崩れ</span>
+        <span>スマホ崩れ</span>
+        <span>WordPress内HTML/CSS</span>
+        <span>GitHub差分納品</span>
+      </section>
+
+      <section id="service" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Service</p>
+          <h2>小さい修正を、発注しやすい単位に切ります。</h2>
+          <p>
+            「全部作り直し」ではなく、今あるHTMLやLPを触って直す仕事に絞ります。
+            依頼者側の確認コストを下げるため、修正前後と差分をセットで出します。
+          </p>
+        </div>
+        <div class="service-grid">
+          <article>
+            <h3>表示崩れの修正</h3>
+            <p>余白、横スクロール、画像のはみ出し、ボタンの位置ずれ、スマホだけ崩れる箇所を確認します。</p>
+          </article>
+          <article>
+            <h3>AI生成HTMLの整理</h3>
+            <p>重複CSS、読みにくいクラス名、不要なインライン指定を減らし、保守しやすい構造に寄せます。</p>
+          </article>
+          <article>
+            <h3>差分つき納品</h3>
+            <p>変更ファイル、修正理由、確認した画面幅、残課題をまとめて、GitHub PRまたはZIPで渡します。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="examples" class="section examples">
+        <div class="section-head">
+          <p class="eyebrow">Examples</p>
+          <h2>納品イメージ</h2>
+        </div>
+        <div class="comparison">
+          <figure>
+            <img src="./assets/cleanup-before.png" alt="修正前の表示崩れ例" width="720" height="420" />
+            <figcaption>修正前: CTAが詰まり、スマホ幅で横スクロールが出る状態</figcaption>
+          </figure>
+          <figure>
+            <img src="./assets/cleanup-after.png" alt="修正後の表示例" width="720" height="420" />
+            <figcaption>修正後: 余白、折り返し、ボタン配置を整理した状態</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="pricing" class="section pricing">
+        <div class="price-copy">
+          <p class="eyebrow">Pricing</p>
+          <h2>初回の小さい依頼は 3,000円 から。</h2>
+          <p>
+            1箇所から依頼できます。作業前に範囲を切るので、見積もりが膨らみません。
+            継続修正やページ全体の調整は、対象ファイル数と確認画面幅で見積もります。
+          </p>
+        </div>
+        <div class="price-box" aria-label="料金">
+          <strong>3,000円</strong>
+          <span>初回ミニ修正</span>
+          <ul>
+            <li>1から3箇所の軽微なHTML/CSS修正</li>
+            <li>PC/スマホ幅の表示確認</li>
+            <li>変更点メモまたはGitHub PR</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="request" class="section request">
+        <div class="section-head">
+          <p class="eyebrow">Request</p>
+          <h2>依頼前に必要なのは、URLかファイルだけです。</h2>
+          <p>
+            いま困っているページ、HTML/CSSファイル、または修正指示を送ってください。
+            触れる範囲と納品形式を確認してから作業します。
+          </p>
+        </div>
+        <div class="request-actions">
+          <a class="button primary" href="https://github.com/part676392/ai-html-fix-service-site/issues/new/choose">
+            GitHubで見積もり相談
+          </a>
+          <button class="button secondary" type="button" id="copyPitch">応募文をコピー</button>
+        </div>
+        <textarea id="pitchText" readonly aria-label="応募文テンプレート">
+はじめまして。AI生成HTMLや既存サイトのHTML/CSS軽微修正を、差分が分かる形で対応できます。
+対応範囲は、余白崩れ、スマホ表示、横スクロール、画像サイズ、ボタン配置、リンク不備などです。
+作業前に対象箇所を切り分け、変更ファイル・修正理由・確認した画面幅をまとめて納品します。
+ポートフォリオ: https://part676392.github.io/ai-html-fix-service-site/
+初回の小さい修正であれば 3,000円から相談可能です。よろしくお願いいたします。
+        </textarea>
+      </section>
+    </main>
+
+    <footer>
+      <span>HTML Fix Studio</span>
+      <span>Public files only. No secrets or private credentials.</span>
+    </footer>
+  </body>
+</html>
