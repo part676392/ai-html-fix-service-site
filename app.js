@@ -3,6 +3,7 @@ const pitchText = document.querySelector("#pitchText");
 const estimateForm = document.querySelector("#estimateForm");
 const copyEstimate = document.querySelector("#copyEstimate");
 const openEstimateIssue = document.querySelector("#openEstimateIssue");
+const emailEstimate = document.querySelector("#emailEstimate");
 const packageButtons = document.querySelectorAll("[data-package]");
 
 const packagePresets = {
@@ -61,15 +62,23 @@ function buildEstimateText() {
 }
 
 function updateIssueLink() {
-  if (!openEstimateIssue) return;
   const body = buildEstimateText();
   const title = "見積もり相談";
-  const params = new URLSearchParams({
-    template: "request.md",
-    title,
-    body,
-  });
-  openEstimateIssue.href = `https://github.com/part676392/ai-html-fix-service-site/issues/new?${params.toString()}`;
+  if (openEstimateIssue) {
+    const params = new URLSearchParams({
+      template: "request.md",
+      title,
+      body,
+    });
+    openEstimateIssue.href = `https://github.com/part676392/ai-html-fix-service-site/issues/new?${params.toString()}`;
+  }
+  if (emailEstimate) {
+    const mailParams = new URLSearchParams({
+      subject: "HTML/CSS小修正の相談",
+      body,
+    });
+    emailEstimate.href = `mailto:part676392@gmail.com?${mailParams.toString()}`;
+  }
 }
 
 if (estimateForm) {
