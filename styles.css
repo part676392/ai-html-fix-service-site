@@ -354,6 +354,20 @@ h1 {
   margin-top: auto;
 }
 
+.package-card .button + .email-package {
+  margin-top: -4px;
+}
+
+.email-package {
+  color: var(--green-dark);
+  background: rgba(15, 139, 111, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(15, 139, 111, 0.18);
+}
+
+.email-package:hover {
+  background: rgba(15, 139, 111, 0.13);
+}
+
 .proof-section {
   background: #ffffff;
 }
@@ -393,6 +407,52 @@ h1 {
   color: var(--muted);
   font-style: normal;
   font-weight: 750;
+}
+
+.fit-section {
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f5f3ee 100%);
+}
+
+.fit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.fit-grid article {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  min-height: 230px;
+  padding: 26px 22px;
+  border-right: 1px solid var(--line);
+}
+
+.fit-grid article:last-child {
+  border-right: 0;
+}
+
+.fit-grid span {
+  color: var(--orange);
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.fit-grid h3,
+.fit-grid p {
+  margin: 0;
+}
+
+.fit-grid h3 {
+  font-size: 24px;
+  line-height: 1.08;
+}
+
+.fit-grid p {
+  color: var(--muted);
 }
 
 .workflow-section {
@@ -552,8 +612,19 @@ footer {
 
   .package-grid,
   .proof-grid,
-  .trust-grid {
+  .trust-grid,
+  .fit-grid {
     grid-template-columns: 1fr;
+  }
+
+  .fit-grid article {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .fit-grid article:last-child {
+    border-bottom: 0;
   }
 }
 
