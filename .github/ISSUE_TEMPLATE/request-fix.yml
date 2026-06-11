@@ -7,6 +7,8 @@ body:
   - type: markdown
     attributes:
       value: |
+        小さなHTML/CSS修正、FAQ/Q&A追加、AI生成フォームの一次確認を相談できます。
+        目安は 3,000円 / 5,000円 / 10,000円 の固定範囲です。
         公開できるURL、HTML/CSSファイル、または修正したい箇所を共有してください。
         秘密情報、ログイン情報、APIキー、個人情報は書かないでください。
   - type: input
@@ -23,6 +25,36 @@ body:
       description: どの画面幅で、どこが、どう崩れているかを書いてください。
     validations:
       required: true
+  - type: dropdown
+    id: package
+    attributes:
+      label: 希望パッケージ
+      description: 迷う場合は一番近いものを選んでください。
+      options:
+        - "3,000円: 1ページ内1〜3箇所の軽微なHTML/CSS修正"
+        - "5,000円: FAQ/Q&Aセクション追加"
+        - "10,000円: AI生成PHPフォーム一次確認"
+        - 相談して決めたい
+    validations:
+      required: true
+  - type: dropdown
+    id: viewport
+    attributes:
+      label: 優先して確認したい画面幅
+      options:
+        - スマホ優先
+        - PC優先
+        - スマホとPCの両方
+        - まだ決めていない
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: 希望納期
+      placeholder: "例: 2営業日以内 / 今週中 / 相談したい"
+    validations:
+      required: false
   - type: textarea
     id: files
     attributes:
@@ -48,4 +80,6 @@ body:
       label: 確認
       options:
         - label: 秘密情報、ログイン情報、APIキー、個人情報を含めていません。
+          required: true
+        - label: サイト全体の新規デザイン、バックエンド改修、本格的な脆弱性診断は対象外であることを理解しています。
           required: true
