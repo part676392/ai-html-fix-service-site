@@ -163,16 +163,8 @@
         <form
           class="estimate-form"
           name="estimate"
-          method="POST"
-          action="./thank-you.html"
-          netlify
-          data-netlify="true"
-          netlify-honeypot="bot-field"
+          id="estimateForm"
         >
-          <input type="hidden" name="form-name" value="estimate" />
-          <p class="hidden-field">
-            <label>この欄は空のままにしてください <input name="bot-field" /></label>
-          </p>
           <label>
             お名前または表示名
             <input name="name" autocomplete="name" required />
@@ -209,7 +201,12 @@
               <option>相談したい</option>
             </select>
           </label>
-          <button class="button primary" type="submit">相談内容を送る</button>
+          <div class="form-actions">
+            <button class="button primary" type="button" id="copyEstimate">相談文をコピー</button>
+            <a class="button secondary" id="openEstimateIssue" href="https://github.com/part676392/ai-html-fix-service-site/issues/new?template=request.md">
+              GitHubで相談を開く
+            </a>
+          </div>
         </form>
         <textarea id="pitchText" readonly aria-label="応募文テンプレート">
 はじめまして。AI生成HTMLや既存サイトのHTML/CSS軽微修正を、差分が分かる形で対応できます。

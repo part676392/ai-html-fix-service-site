@@ -371,13 +371,14 @@ textarea {
 }
 
 .estimate-form label:has(textarea),
-.estimate-form .button {
+.estimate-form .form-actions {
   grid-column: 1 / -1;
 }
 
-.hidden-field {
-  position: absolute;
-  left: -9999px;
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 footer {
