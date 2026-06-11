@@ -85,18 +85,29 @@ function setField(name, value) {
   field.value = value;
 }
 
+function applyPackagePreset(packageName, shouldScroll = true) {
+  const preset = packagePresets[packageName];
+  if (!preset || !estimateForm) return;
+  setField("platform", preset.platform);
+  setField("target", preset.target);
+  setField("problem", preset.problem);
+  setField("budget", preset.budget);
+  updateIssueLink();
+  if (shouldScroll) {
+    document.querySelector("#request")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
+
 packageButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const preset = packagePresets[button.dataset.package];
-    if (!preset || !estimateForm) return;
-    setField("platform", preset.platform);
-    setField("target", preset.target);
-    setField("problem", preset.problem);
-    setField("budget", preset.budget);
-    updateIssueLink();
-    document.querySelector("#request")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    applyPackagePreset(button.dataset.package);
   });
 });
+
+if (estimateForm) {
+  const packageName = new URLSearchParams(window.location.search).get("package");
+  applyPackagePreset(packageName, false);
+}
 
 if (copyEstimate) {
   copyEstimate.addEventListener("click", async () => {
