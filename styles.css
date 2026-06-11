@@ -443,6 +443,7 @@ h1 {
 .workflow-list strong,
 .workflow-list span {
   display: block;
+  grid-column: 2;
 }
 
 .workflow-list strong {
@@ -589,6 +590,11 @@ footer {
 
   .workflow-list li {
     grid-template-columns: 1fr;
+  }
+
+  .workflow-list strong,
+  .workflow-list span {
+    grid-column: 1;
   }
 
   footer {
