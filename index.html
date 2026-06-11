@@ -160,6 +160,56 @@
           正式な契約・支払いは、クラウドワークス、ココナラ、その他の取引プラットフォーム経由にも合わせられます。
           GitHub Issueは、公開できる範囲の事前相談だけに使ってください。
         </p>
+        <form
+          class="estimate-form"
+          name="estimate"
+          method="POST"
+          action="/thank-you.html"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="estimate" />
+          <p class="hidden-field">
+            <label>この欄は空のままにしてください <input name="bot-field" /></label>
+          </p>
+          <label>
+            お名前または表示名
+            <input name="name" autocomplete="name" required />
+          </label>
+          <label>
+            連絡先
+            <input name="contact" autocomplete="email" placeholder="メール、クラウドワークスURL、ココナラURLなど" required />
+          </label>
+          <label>
+            契約・支払いに使いたい場所
+            <select name="platform" required>
+              <option value="">選択してください</option>
+              <option>クラウドワークス</option>
+              <option>ココナラ</option>
+              <option>その他の取引プラットフォーム</option>
+              <option>まだ決めていない</option>
+            </select>
+          </label>
+          <label>
+            対象URLまたは作業概要
+            <input name="target" placeholder="https://example.com/lp" required />
+          </label>
+          <label>
+            困っていること
+            <textarea name="problem" required placeholder="スマホ幅で横スクロールが出る、Q&A欄を追加したい、記事入稿を頼みたい、など"></textarea>
+          </label>
+          <label>
+            予算感
+            <select name="budget" required>
+              <option value="">選択してください</option>
+              <option>3,000円くらい</option>
+              <option>5,000円くらい</option>
+              <option>10,000円以上</option>
+              <option>相談したい</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">相談内容を送る</button>
+        </form>
         <textarea id="pitchText" readonly aria-label="応募文テンプレート">
 はじめまして。AI生成HTMLや既存サイトのHTML/CSS軽微修正を、差分が分かる形で対応できます。
 対応範囲は、余白崩れ、スマホ表示、横スクロール、画像サイズ、ボタン配置、リンク不備などです。

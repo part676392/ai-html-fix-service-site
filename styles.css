@@ -331,6 +331,55 @@ textarea {
   font-size: 14px;
 }
 
+.estimate-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 920px;
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfbf7;
+}
+
+.estimate-form label {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.estimate-form input,
+.estimate-form select,
+.estimate-form textarea {
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  font-weight: 500;
+}
+
+.estimate-form textarea {
+  min-height: 120px;
+}
+
+.estimate-form label:has(textarea),
+.estimate-form .button {
+  grid-column: 1 / -1;
+}
+
+.hidden-field {
+  position: absolute;
+  left: -9999px;
+}
+
 footer {
   display: flex;
   flex-wrap: wrap;
@@ -361,7 +410,8 @@ footer {
 
   .service-grid,
   .comparison,
-  .pricing {
+  .pricing,
+  .estimate-form {
     grid-template-columns: 1fr;
   }
 
