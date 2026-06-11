@@ -30,6 +30,18 @@ body:
       description: GitHub PR、ZIP、修正メモなど希望があれば書いてください。
     validations:
       required: false
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 契約・支払いに使いたい場所
+      description: 正式契約や支払いは、必要に応じて取引プラットフォーム側へ移します。
+      options:
+        - クラウドワークス
+        - ココナラ
+        - その他の取引プラットフォーム
+        - まだ決めていない
+    validations:
+      required: true
   - type: checkboxes
     id: rules
     attributes:
