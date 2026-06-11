@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>共通パーツ実装サンプル</title>
+    <link
+      rel="icon"
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect x="5" y="7" width="22" height="18" rx="4" fill="%230f8b6f"/><path d="M10 14h12M10 18h8" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>'
+    />
+    <style>
+      :root {
+        --ink: #18211c;
+        --muted: #627067;
+        --paper: #f7f6f0;
+        --panel: #ffffff;
+        --line: #d9ded5;
+        --accent: #0f8b6f;
+        --accent-dark: #0a5f4d;
+        --blue: #2b5c83;
+        --warn: #d36b2c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.65;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .notice {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 10px 18px;
+        color: #ffffff;
+        background: var(--blue);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        padding: 16px min(5vw, 56px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 246, 240, 0.94);
+        backdrop-filter: blur(12px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 180px;
+        font-size: 18px;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 7px;
+        background:
+          linear-gradient(135deg, var(--accent), #f0b15f),
+          var(--accent);
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 6px;
+      }
+
+      .nav a {
+        min-height: 38px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .nav a:hover,
+      .nav a:focus-visible {
+        color: var(--ink);
+        background: #ffffff;
+        outline: 2px solid transparent;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+        gap: 34px;
+        align-items: center;
+        padding: 56px min(5vw, 56px) 40px;
+      }
+
+      .hero-copy {
+        max-width: 700px;
+      }
+
+      .label {
+        margin: 0 0 10px;
+        color: var(--warn);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        overflow-wrap: anywhere;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 56px;
+        line-height: 1.08;
+      }
+
+      .lead {
+        max-width: 620px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 12px 17px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        border-color: var(--accent);
+        color: #ffffff;
+        background: var(--accent);
+      }
+
+      .button.primary:hover {
+        background: var(--accent-dark);
+      }
+
+      .preview-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 18px 44px rgba(20, 31, 25, 0.12);
+        overflow: hidden;
+      }
+
+      .preview-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 18px;
+        border-bottom: 1px solid var(--line);
+        background: #fbfbf7;
+      }
+
+      .preview-top strong {
+        font-size: 18px;
+      }
+
+      .status {
+        color: var(--accent-dark);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .preview-body {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        min-height: 300px;
+      }
+
+      .side-menu {
+        padding: 18px;
+        border-right: 1px solid var(--line);
+        background: #f1f5f2;
+      }
+
+      .side-menu a {
+        display: block;
+        padding: 9px 0;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .content {
+        padding: 22px;
+      }
+
+      .content h2 {
+        margin: 0 0 12px;
+        font-size: 28px;
+        line-height: 1.18;
+      }
+
+      .content p {
+        margin: 0 0 16px;
+        color: var(--muted);
+      }
+
+      .cta-box {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+        align-items: center;
+        padding: 16px;
+        border: 1px solid #bfd5cd;
+        border-radius: 8px;
+        background: #e9f5f1;
+      }
+
+      .cta-box strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .section {
+        padding: 54px min(5vw, 56px);
+      }
+
+      .section h2 {
+        margin: 0 0 18px;
+        font-size: 36px;
+        line-height: 1.16;
+      }
+
+      .parts-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .part {
+        min-height: 176px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .part span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--accent);
+        font-weight: 900;
+      }
+
+      .part h3 {
+        margin: 0 0 8px;
+        font-size: 19px;
+      }
+
+      .part p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .checklist {
+        display: grid;
+        gap: 10px;
+        max-width: 840px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .checklist li {
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .site-footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 24px min(5vw, 56px);
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        background: #ffffff;
+        font-size: 14px;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .parts-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .notice,
+        .site-header,
+        .site-footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        h1 {
+          font-size: 38px;
+        }
+
+        .preview-body,
+        .cta-box,
+        .parts-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .side-menu {
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notice">
+      <span>PNG/JPGデザイン支給からのHTML/CSSパーツ化サンプル</span>
+      <span>PC/SP確認・差分メモつき納品を想定</span>
+    </div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="ページ先頭へ">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Parts Coding</span>
+      </a>
+      <nav class="nav" aria-label="主要メニュー">
+        <a href="#parts">対応パーツ</a>
+        <a href="#checks">確認項目</a>
+        <a href="../">サービスLPへ</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="label">COMMON PARTS SAMPLE</p>
+          <h1>ヘッダー・ナビ・CTAを崩れにくく組みます。</h1>
+          <p class="lead">
+            支給画像や既存ページをもとに、共通パーツをHTML/CSS/簡単なJavaScriptで実装する想定のサンプルです。
+            納品前にPCとスマホ幅で、余白、折り返し、クリック範囲、横スクロールを確認します。
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#parts">実装範囲を見る</a>
+            <a class="button" href="../">依頼ページへ戻る</a>
+          </div>
+        </div>
+
+        <aside class="preview-card" aria-label="共通パーツの画面例">
+          <div class="preview-top">
+            <strong>Dashboard UI</strong>
+            <span class="status">Responsive OK</span>
+          </div>
+          <div class="preview-body">
+            <nav class="side-menu" aria-label="サイドメニュー例">
+              <a href="#parts">概要</a>
+              <a href="#parts">料金</a>
+              <a href="#parts">事例</a>
+              <a href="#parts">相談</a>
+            </nav>
+            <div class="content">
+              <h2>初回相談の導線</h2>
+              <p>
+                見出し、本文、CTAがスマホ幅でも重ならないよう、固定幅と可変幅を分けて調整します。
+              </p>
+              <div class="cta-box">
+                <div>
+                  <strong>無料で範囲確認</strong>
+                  <span>対象URLと修正点を先に切り分けます。</span>
+                </div>
+                <a class="button primary" href="../#request">相談</a>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="parts" class="section">
+        <p class="label">PARTS</p>
+        <h2>応募案件で出やすい小さな実装単位</h2>
+        <div class="parts-grid">
+          <article class="part">
+            <span>1</span>
+            <h3>ヘッダー</h3>
+            <p>ロゴ、グローバルナビ、追従表示、スマホ時の折り返しを整えます。</p>
+          </article>
+          <article class="part">
+            <span>2</span>
+            <h3>サイドメニュー</h3>
+            <p>カテゴリ、アンカーリンク、現在地表示を見やすく組みます。</p>
+          </article>
+          <article class="part">
+            <span>3</span>
+            <h3>CTA</h3>
+            <p>ボタン、説明文、背景色、クリック範囲を崩れにくく配置します。</p>
+          </article>
+          <article class="part">
+            <span>4</span>
+            <h3>フッター</h3>
+            <p>リンク群、コピー、会社情報などをPC/SPで読みやすく整理します。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="checks" class="section">
+        <p class="label">DELIVERY CHECK</p>
+        <h2>納品前に見ること</h2>
+        <ul class="checklist">
+          <li>PC幅とスマホ幅で、横スクロールや文字の重なりが出ていないか。</li>
+          <li>ボタンとリンクが押しやすい大きさで、意図した場所へ移動するか。</li>
+          <li>画像支給の場合、再現できた点と素材不足で仮置きにした点を分けて説明できるか。</li>
+          <li>変更ファイル、確認した画面幅、残課題を短いメモで渡せるか。</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>HTML Fix Studio / 共通パーツ実装サンプル</span>
+      <span>HTML, CSS, lightweight JavaScript</span>
+    </footer>
+  </body>
+</html>
