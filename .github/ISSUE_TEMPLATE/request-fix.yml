@@ -8,9 +8,18 @@ body:
     attributes:
       value: |
         小さなHTML/CSS修正、FAQ/Q&A追加、AI生成フォームの一次確認を相談できます。
+        対応は「同一ページ内の軽微修正」を前提に進めます。サイト全体刷新、バックエンド改修、脆弱性診断、決済/認証/DB実装は除外です。
         目安は 3,000円 / 5,000円 / 10,000円 の固定範囲です。
         公開できるURL、HTML/CSSファイル、または修正したい箇所を共有してください。
         秘密情報、ログイン情報、APIキー、個人情報は書かないでください。
+  - type: textarea
+    id: scope
+    attributes:
+      label: 対象範囲
+      description: 1つのページで、対象を1〜3項目まで絞ってください。ページ幅、崩れ箇所、除外したい要素を明記してください。
+      placeholder: "例: トップページ / ヘッダー/CTA / 質問追加は1セクション"
+    validations:
+      required: true
   - type: input
     id: target
     attributes:
@@ -82,4 +91,6 @@ body:
         - label: 秘密情報、ログイン情報、APIキー、個人情報を含めていません。
           required: true
         - label: サイト全体の新規デザイン、バックエンド改修、本格的な脆弱性診断は対象外であることを理解しています。
+          required: true
+        - label: 修正範囲は原則1ページ内の軽微修正とし、3点程度以上の追加要望は要件再定義が必要であることを理解しています。
           required: true
